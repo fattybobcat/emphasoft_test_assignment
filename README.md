@@ -10,3 +10,6 @@ These instructions will get you a copy of the project up and running on your loc
 ### Installation
 
 Clone the repo
+
+django-admin startproject emphasoft 
+python manage.py startapp api
