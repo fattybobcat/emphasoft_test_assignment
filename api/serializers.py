@@ -34,17 +34,16 @@ class WriteOnlyUserSerializer(serializers.HyperlinkedModelSerializer):
             'is_active': {'required': True},
         }
 
-    def to_representation(self, instance):
-        user = User.objects.get(username=instance)
+    def to_representation(self, instance: str) -> dict[str, str]:
+        user: User = User.objects.get(username=instance)
         return ReadOnlyUserSerializer(user).data
 
     def validate(self, data):
-        print('fata', self)
         if not data:
             raise serializers.ValidationError("Must include at least one field")
         return data
 
-    def validate_username(self, value):
+    def validate_username(self, value: str) -> str:
         check_query = User.objects.filter(username=value)
         if self.instance:
             check_query = check_query.exclude(pk=self.instance.pk)
