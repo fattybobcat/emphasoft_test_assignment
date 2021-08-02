@@ -33,7 +33,7 @@ password: password
 
 Петрук Александр - [GitHub](https://github.com/fattybobcat)
 
-[резюме](https://github.com/fattybobcat/emphasoft_test_assignment/blob/main/cv_Petruk.pdf)
+[резюме](https://github.com/fattybobcat/emphasoft_test_assignment/blob/main/CV_Petruk_A.pdf)
 
 ## Лицензия
 
