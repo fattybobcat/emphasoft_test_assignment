@@ -1,5 +1,6 @@
 # emphasoft_test_assignment
 [![Build Status](https://www.travis-ci.com/fattybobcat/emphasoft_test_assignment.svg?token=xnqzf2HY5d6q74MCvyy9&branch=main)](https://www.travis-ci.com/fattybobcat/emphasoft_test_assignment)
+[![codecov](https://codecov.io/gh/fattybobcat/emphasoft_test_assignment/branch/main/graph/badge.svg?token=Ue7yTp55cD)](https://codecov.io/gh/fattybobcat/emphasoft_test_assignment)
 
 Test Task for emphasoft
 
