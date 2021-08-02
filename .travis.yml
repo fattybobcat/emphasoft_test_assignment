@@ -6,3 +6,7 @@ install:
 script:
   - flake8 .
   - mypy .
+  - pytest --cov=api --no-cov-on-fail --cov-fail-under=55 api
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
