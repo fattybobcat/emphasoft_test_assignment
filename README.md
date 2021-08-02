@@ -3,13 +3,37 @@
 
 Test Task for emphasoft
 
-## Getting Started
+### Установка
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+Клонируйте репозиторий с проектом https://github.com/fattybobcat/emphasoft_test_assignment.git
 
-### Installation
+Создайте виртуальное пространство python -m venv venv и активируйте его.
 
-Clone the repo
+Установите необходимые модули pip install -r requirements.txt
 
-django-admin startproject emphasoft 
-python manage.py startapp api
+## Работа с проектом
+Примените миграции `python manage.py migrate`
+
+Создайте superuser  `python manage.py createsuperuser`
+
+Запустите проект `python manage.py runserver`
+
+### Запустите Postman
+Получите авторизацию superuser: 
+`GET http://127.0.0.1:8008/api-token-auth/`
+с логином и паролем вашего superuser
+```
+username: admin
+password: password
+```
+Используя полученный токен, согласно документации на [API](https://emphasoft-test-assignment.herokuapp.com/swagger/) можете посылая запросы создавать новых user, изменять их данные и удалять
+
+## Aвтор проекта
+
+Петрук Александр - [GitHub](https://github.com/fattybobcat)
+
+[резюме](https://github.com/fattybobcat/emphasoft_test_assignment/blob/main/cv_Petruk.pdf)
+
+## Лицензия
+
+[MIT](https://choosealicense.com/licenses/mit/)
