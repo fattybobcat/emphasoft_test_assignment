@@ -1,5 +1,6 @@
 import pytest
 from api.serializers import ReadOnlyUserSerializer
+from django.contrib.auth.models import User
 
 pytestmark = pytest.mark.django_db
 

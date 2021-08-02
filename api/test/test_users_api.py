@@ -1,3 +1,5 @@
+import json
+
 import pytest
 from rest_framework.authtoken.models import Token
 from rest_framework.test import APITestCase
@@ -136,3 +138,15 @@ class RemoteAuthenticatedTest(APITestCase):
         self.client.credentials(HTTP_AUTHORIZATION='Token ' + self.user.auth_token.key)
         response = self.client.put(url)
         assert response.status_code == status.HTTP_404_NOT_FOUND
+
+    @pytest.mark.django_db(transaction=True)
+    def test_auth_user_put_exist_username(self):
+        url = '/api/v1/users/1/'
+        data = {
+            'username': 'test_user_2',
+            'password': 'F4kePaSs0d',
+        }
+        self.client.credentials(HTTP_AUTHORIZATION='Token ' + self.user.auth_token.key)
+        response = self.client.put(url, data)
+        assert response.status_code == status.HTTP_400_BAD_REQUEST
+        assert response.json().get('username') == ['A User with this username exists']
